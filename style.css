@@ -1,0 +1,107 @@
+body{
+  background-color: rgb(255, 216, 230);
+  font-family:'Pixelify Sans', sans-serif;
+  font-size: 15px;
+  color: rgb(69, 71, 74);
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: center;
+  height:600px;
+
+} 
+
+h2{
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 15px;
+  color: #1f1b1ff6;
+  margin-top: -10px;
+}
+
+.mic-button {
+  position: relative;
+  z-index: 10;
+  border: 0;
+  border-radius: 90px;
+  padding: 5px 9px;
+  background: transparent;
+  color: rgb(7, 5, 5);
+  font: inherit;
+  cursor: pointer;
+  margin: -20px auto 0;
+}
+
+.mic-button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.candles{
+  position: absolute;
+  width: 500px;
+  height: auto;
+  align-items: center;
+  margin: 210px auto 0;
+  z-index: 5;
+  transform-origin: 50% 100%;
+}
+
+.candles.blown-out {
+  animation: cake-top-rise 1000ms linear forwards;
+  pointer-events: none;
+}
+
+@keyframes cake-top-rise {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-280px);
+    opacity: 0;
+  }
+}
+
+/* .candles{
+  position: absolute;
+  margin: 200px;
+  width: 500px;
+  height: 500px;
+  z-index: 5;
+  
+} */
+.cake{
+  position: absolute;
+  margin: 70px;
+  margin-left: 80px;
+  width: 500px;
+  height: 500px;
+  z-index: 3;
+  /*transition: transform 900ms ease;*/
+} 
+
+.cat{
+  position: absolute;
+  z-index: 2;
+  width: 400px;
+  height: auto;
+  margin:315px auto 0;
+  opacity: 0;
+  transform: translateY(180px) scale(.78);
+} 
+
+.cat.revealed {
+  z-index: 2;
+  opacity: 1;
+  animation: cat-slide-up 1200ms cubic-bezier(.2,.75,.25,1) forwards;
+}
+
+@keyframes cat-slide-up {
+  0% {
+    transform: translateY(220px) scale(.86);
+  }
+  100% {
+    transform: translateY(-180px) scale(1.05);
+  }
+}
